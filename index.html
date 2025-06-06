@@ -19,6 +19,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <!-- 引入 Font Awesome 6（推荐） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
 
   <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
@@ -67,7 +73,7 @@
         <span class="author-block">
           <a href="https://scholar.google.com/citations?user=dxN1_X0AAAAJ&hl=en">Hang Su</a><sup style="color:#1db2ec">1</sup>,</span>
         <span class="author-block">
-          <a href="https://scholar.google.com/citations?user=axsP38wAAAAJ&hl=en">Jun Zhu</a><sup style="color:#1db2ec">1</sup>,</span>
+          <a href="https://scholar.google.com/citations?user=axsP38wAAAAJ&hl=en">Jun Zhu</a><sup style="color:#1db2ec">1</sup></span>
       </div>
 
       <div class="is-size-5 publication-authors">
@@ -150,15 +156,12 @@
         <div class="content has-text-justified">
           <p>
             <!-- Despite the superior capabilities of <b>Multimodal Large Language Models (MLLMs)</b> across diverse tasks, they still face significant trustworthiness challenges. Yet, current literature on the assessment of trustworthy MLLMs remains limited, lacking <b>a holistic evaluation</b> to offer thorough insights into future improvements. -->
-            The emergence of multimodal LLM-based agents (MLAs) has transformed interaction paradigms by seamlessly integrating vision, language, action and dynamic environments, enabling unprecedented autonomous capabilities across GUI applications ranging from web automation to mobile systems. However, MLAs introduce critical trustworthiness challenges that extend far beyond traditional language models’ limitations, as they can directly modify digital states and trigger irreversible real-world consequences. Existing benchmarks inadequately tackle these unique challenges posed by MLAs’ actionable outputs, longhorizon uncertainty and multimodal attack vectors. In this paper, we introduce 
-            <b>MLA-Trust</b>, the first comprehensive and unified framework that evaluates the MLA trustworthiness across four principled dimensions: truthfulness, controllability, safety and privacy. We utilize websites and mobile applications as realistic testbeds, designing 34 high-risk interactive tasks and curating rich evaluation datasets. Large-scale experiments involving 13 state-of-the-art agents reveal previously unexplored trustworthiness vulnerabilities unique to multimodal interactive scenarios. For instance, proprietary and open-source GUI-interacting MLAs pose more severe trustworthiness risks than static MLLMs, particularly in high-stakes domains; the transition from static MLLMs into interactive MLAs considerably compromises trustworthiness, enabling harmful content generation in multi-step interactions that standalone MLLMs would typically prevent; multi-step execution, while enhancing the adaptability of MLAs, involves latent nonlinear risk accumulation across successive interactions, circumventing existing safeguards and resulting in unpredictable derived risks. Moreover, we present an extensible toolbox to facilitate continuous evaluation of MLA trustworthiness across diverse interactive environments. MLA-Trust establishes a foundation for analyzing and improving the MLA trustworthiness, promoting reliable deployment in real-world applications.
+            The emergence of 
+            <b>multimodal LLM-based agents (MLAs)</b> has transformed interaction paradigms by seamlessly integrating vision, language, action and dynamic environments, enabling unprecedented autonomous capabilities across GUI applications ranging from web automation to mobile systems. However, MLAs introduce critical trustworthiness challenges that extend far beyond traditional language models’ limitations, as they can directly modify digital states and trigger irreversible real-world consequences. Existing benchmarks inadequately tackle these unique challenges posed by MLAs’ actionable outputs, longhorizon uncertainty and multimodal attack vectors. In this paper, we introduce 
+            <b>MLA-Trust</b>, the first comprehensive and unified framework that evaluates the MLA trustworthiness across four principled dimensions: truthfulness, controllability, safety and privacy. We utilize 
+            <b>websites and mobile applications</b> as realistic testbeds, designing 34 high-risk interactive tasks and curating rich evaluation datasets. Large-scale experiments involving 13 state-of-the-art agents reveal previously unexplored trustworthiness vulnerabilities unique to multimodal interactive scenarios. For instance, proprietary and open-source GUI-interacting MLAs pose more severe trustworthiness risks than static MLLMs, particularly in high-stakes domains; the transition from static MLLMs into interactive MLAs considerably compromises trustworthiness, enabling harmful content generation in multi-step interactions that standalone MLLMs would typically prevent; multi-step execution, while enhancing the adaptability of MLAs, involves latent nonlinear risk accumulation across successive interactions, circumventing existing safeguards and resulting in unpredictable derived risks. Moreover, we present an extensible toolbox to facilitate continuous evaluation of MLA trustworthiness across diverse interactive environments. MLA-Trust establishes a foundation for analyzing and improving the MLA trustworthiness, promoting reliable deployment in real-world applications.
           </p>
-          <!-- <p>
-            In this work, we establish <b>MultiTrust</b>, the first comprehensive and unified benchmark on the trustworthiness of MLLMs across five primary aspects: <i>truthfulness</i>, <i>safety</i>, <i>robustness</i>, <i>fairness</i>, and <i>privacy</i>. Our benchmark employs a rigorous evaluation strategy that addresses both <b>multimodal risks</b> and <b>cross-modal impacts</b>, encompassing 32 diverse tasks with self-curated datasets.
-          </p>
-          <p>
-            Extensive experiments with 21 modern MLLMs reveal some previously unexplored trustworthiness issues and risks, highlighting the complexities introduced by the multimodality and underscoring the necessity for advanced methodologies to enhance their reliability. For instance, typical proprietary models still struggle with the perception of visually confusing images and are vulnerable to multimodal jailbreaking and adversarial attacks; MLLMs are more inclined to disclose privacy in text and reveal ideological and cultural biases even when paired with irrelevant images in inference, indicating that the multimodality amplifies the internal risks from base LLMs.
-          </p> -->
+          
         </div>
       </div>
     </div>
@@ -173,58 +176,92 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3" id="task">Task Pool</h2>
         <!-- <img src="static/images/task-description.png" alt="task-description" width="70%"/> -->
-        <img src="static/images/task-list.png" alt="task-list" width="90%"/>
+        <img src="static/images/task-list.png" alt="task-list" width="100%"/>
         <div class="content has-text-justified">
           <p class="mt-3">
-            <!-- <b>Task Overview:</b> We organize a two-level taxonomy containing 10 sub-aspects to better categorize the target behaviors to be evaluated. Based on the taxonomy, we curate 32 diverse tasks to cover realistic and comprehensive scenarios with trustworthy risks, including generative and discriminative, multimodal and text-only ones, as summarized above. To tackle the current lack of datasets dedicated for various scenarios under these sub-aspects, we construct 20 datasets based on the existing text, image, and multimodal datasets by adapting prompts, images, and annotations with both manual efforts and automatic methods. We further propose 8 novel datasets from scratch by collecting images from the Internet or synthesizing images with Stable Diffusion and other algorithms specifically for the designed tasks.<br> 
-            <img src="static/images/icon/circle-xmark-regular.svg" style="width:1.0em;vertical-align: middle" alt="circle-xmark"/> : off-the-shelf datasets from prior work; <img src="static/images/icon/circle-plus-solid.svg" style="width:1.0em;vertical-align: middle" alt="circle-plus"/> : datasets adapted to new tasks with additional images, prompts, and annotations; <img src="static/images/icon/circle-check-solid.svg" style="width:1.0em;vertical-align: middle" alt="circle-check"/> : datasets constructed from scratch. <img src="static/images/icon/file-image-regular.svg" style="width:1.0em;vertical-align: middle" alt="file-image"/> : tasks for revealing multimodal risks; <img src="static/images/icon/file-lines-regular.svg" style="width:1.0em;vertical-align: middle" alt="file-text"/> : tasks for studying cross-modal impacts. <img src="static/images/icon/circle-regular.svg" style="width:1.0em;vertical-align: middle" alt="circle"/> : rule-based evaluation (e.g., keywords matching); <img src="static/images/icon/circle-solid.svg" style="width:1.0em;vertical-align: middle" alt="circle-solid"/> : automatic evaluation by GPT-4 or other classifiers; <img src="static/images/icon/circle-half-stroke-solid.svg" style="width:1.0em;vertical-align: middle" alt="circle-left"/> : mixture evaluation. ASR stands for Attack Success Rate, RtA stands for Refuse-to-Answer rate, and Accuracy is sometimes abbreviated as Acc. -->
+            
+            <b>Task Overview:</b> We organize a two-level taxonomy containing 8 sub-aspects to better categorize the target behaviors to be evaluated. Based on the taxonomy, we curate 34 diverse tasks to cover realistic and comprehensive scenarios with trustworthy risks, including predefined process and contextual reasoning, website and mobile ones, as summarized above. To tackle the current lack of datasets dedicated for various scenarios under these sub-aspects, we construct 11 datasets based on the existing datasets by adapting prompts and images with both manual efforts and automatic methods. We further propose 23 novel datasets from scratch specifically for the designed tasks.<br> 
+            <i class="fas fa-link" style="font-size: 20px; vertical-align: middle;">link</i>: website task; <i class="fas fa-mobile-alt" style="font-size: 20px; vertical-align: middle;"></i>: mobile task; <i class="fas fa-crosshairs" style="font-size: 20px; vertical-align: middle;"></i>: mixture task. <i class="fas fa-plus-circle" style="font-size: 20px; vertical-align: middle;"></i>: datasets improved design from existing datasets; <i class="fas fa-check-circle" style="font-size: 20px; vertical-align: middle;"></i>: datasets constructed from scratch; <i class="fas fa-image" style="font-size: 20px; vertical-align: middle;"></i>: datasets involving user image input. <i class="fas fa-arrow-right" style="font-size: 20px; vertical-align: middle;"></i>: predefined process task; <i class="fas fa-random" style="font-size: 20px; vertical-align: middle;"></i>: contextual reasoning task. <i class="far fa-circle" style="font-size: 20px; vertical-align: middle;"></i>: rule-based evaluation(e.g., keywords matching); <i class="fas fa-circle" style="font-size: 20px; vertical-align: middle;"></i>: automatic evaluation by GPT-4 or other classifiers; <i class="fas fa-adjust" style="font-size: 20px; vertical-align: middle;"></i>: mixture evaluation. RtE stands for Refuse-to-Execute rate and ASR stands for Attack Success Rate.
 
-            <!-- Task Overview. Each task ID is linked to the section in Appendix. : website task; I: mobile task; î: mixture task. : datasets improved design from existing datasets; ¥: datasets constructed from scratch; ë: datasets involving user image input. $: predefined process task; ¶: contextual reasoning task. ○: rule-based evaluation(e.g., keywords matching); ○: automatic evaluation by GPT-4 or other classifiers; : mixture evaluation. RtE stands for Refuse-to-Execute rate and ASR stands for Attack Success Rate. -->
+            
           </p>  
+        </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 
+
 <section class="section">
   <div class="container" style="margin-bottom: 2vh;">
     <div class="columns is-centered">
       <div class="column is-four-fifths has-text-centered content">
         <div class="content">
-          <p class="title is-3" id="leaderboard">Leaderboard in MultiTrust (Updating...)
-          </p>
-          <div id="multitrust_leaderboard"></div>
-        </div>
+          <p class="title is-3" id="leaderboard" style="margin-bottom: -18rem;">Leaderboard in MLA-Trust (Updating...)</p>
+          <div id="mlatrust_leaderboard">
+            <table class="js-sort-table" id="results" data-js-sort-table="true">
+            <thead>
+              <tr>
+          <td class="js-sort-number" data-js-sort-colnum="0"><strong>#</strong></td>
+          <td class="js-sort" data-js-sort-colnum="1"><strong>Model</strong></td>
+          <td class="js-sort" data-js-sort-colnum="2"><strong>Source</strong></td>
+          <td class="js-sort-number" data-js-sort-colnum="3"><strong>T.I</strong></td>
+          <td class="js-sort-number" data-js-sort-colnum="4"><strong>T.M</strong></td>
+          <td class="js-sort-number" data-js-sort-colnum="5"><strong>C.O</strong></td>
+          <td class="js-sort-number" data-js-sort-colnum="6"><strong>C.S</strong></td>
+          <td class="js-sort-number" data-js-sort-colnum="7"><strong>S.T</strong></td>
+          <td class="js-sort-number" data-js-sort-colnum="8"><strong>S.J</strong></td>
+          <td class="js-sort-number" data-js-sort-colnum="9"><strong>P.A</strong></td>
+          <td class="js-sort-number" data-js-sort-colnum="10"><strong>P.L</strong></td>
+          <td class="js-sort-number" data-js-sort-colnum="11"><strong>Overall</strong></td>
+      </tr></thead>
+      <tbody>
+    <tr><td>1</td><td><b class="best-score-text">GPT-4o🥇</b></td><td><a href="https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4" class="ext-link" style="font-size: 16px;">Link</a></td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td></tr><br>
+    <tr><td>2</td><td><b class="best-score-text">GPT-4-turbo🥈</b></td><td><a href="https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4" class="ext-link" style="font-size: 16px;">Link</a></td><td>2</td><td>3</td><td>2</td><td>2</td><td>2</td><td>4</td><td>2</td><td>1</td><td>2</td></tr><br>
+    <tr><td>3</td><td><b class="best-score-text">Claude-3-7-sonnet🥉</b></td><td><a href="https://console.anthropic.com/" class="ext-link" style="font-size: 16px;">Link</a></td><td>3</td><td>2</td><td>4</td><td>3</td><td>4</td><td>3</td><td>3</td><td>5</td><td>3</td></tr><br>
+    <tr><td>4</td><td>Gemini-2.0-pro</td><td><a href="https://ai.google.dev/gemini-api/docs/models" class="ext-link" style="font-size: 16px;">Link</a></td><td>4</td><td>4</td><td>3</td><td>4</td><td>5</td><td>5</td><td>4</td><td>3</td><td>4</td></tr><br>
+    <tr><td>5</td><td>Gemini-2.0-flash</td><td><a href="https://ai.google.dev/gemini-api/docs/models" class="ext-link" style="font-size: 16px;">Link</a></td><td>5</td><td>5</td><td>5</td><td>5</td><td>3</td><td>2</td><td>5</td><td>4</td><td>5</td></tr><br>
+    <tr><td>6</td><td>LLaVA-OneVision</td><td><a href="https://huggingface.co/docs/transformers/main/en/model_doc/llava_onevision" class="ext-link" style="font-size: 16px;">Link</a></td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>8</td><td>6</td><td>6</td><td>6</td></tr><br>
+    <tr><td>7</td><td>DeepSeek-VL2</td><td><a href="https://huggingface.co/deepseek-ai/deepseek-vl2" class="ext-link" style="font-size: 16px;">Link</a></td><td>7</td><td>7</td><td>7</td><td>7</td><td>10</td><td>6</td><td>11</td><td>7</td><td>7</td></tr><br>
+    <tr><td>8</td><td>LLaVA-NeXT</td><td><a href="https://huggingface.co/docs/transformers/main/en/model_doc/llava_next" class="ext-link" style="font-size: 16px;">Link</a></td><td>8</td><td>9</td><td>10</td><td>10</td><td>7</td><td>7</td><td>9</td><td>9</td><td>8</td></tr><br>
+    <tr><td>9</td><td>Phi-4</td><td><a href="https://huggingface.co/docs/transformers/main/en/model_doc/phi4_multimodal" class="ext-link" style="font-size: 16px;">Link</a></td><td>9</td><td>10</td><td>9</td><td>9</td><td>9</td><td>10</td><td>8</td><td>8</td><td>9</td></tr><br>
+    <tr><td>10</td><td>MiniCPM-o-2_6</td><td><a href="https://github.com/OpenBMB/MiniCPM" class="ext-link" style="font-size: 16px;">Link</a></td><td>10</td><td>8</td><td>8</td><td>8</td><td>8</td><td>9</td><td>10</td><td>11</td><td>10</td></tr><br>
+    <tr><td>11</td><td>Pixtral-12B</td><td><a href="https://huggingface.co/mistralai/Pixtral-12B-2409" class="ext-link" style="font-size: 16px;">Link</a></td><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td><td>7</td><td>10</td><td>11</td></tr><br>
+    <tr><td>12</td><td>InternVL2-8B</td><td><a href="https://github.com/OpenGVLab/InternVL" class="ext-link" style="font-size: 16px;">Link</a></td><td>12</td><td>13</td><td>12</td><td>13</td><td>12</td><td>12</td><td>13</td><td>12</td><td>12</td></tr><br>
+    <tr><td>13</td><td>Qwen2.5-VL</td><td><a href="https://huggingface.co/docs/transformers/main/en/model_doc/qwen2_5_vl" class="ext-link" style="font-size: 16px;">Link</a></td><td>13</td><td>12</td><td>13</td><td>12</td><td>13</td><td>13</td><td>12</td><td>13</td><td>13</td></tr><br>
+
+  </tbody>
+</table>
+</div>
+</div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 
 <!-- @PAN TODO: bibtex -->
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content" style="margin-bottom: 2vh;">
     <h2 class="title is-3 has-text-centered">BibTeX</h2>
-    <pre><code>
+    <pre>
+      <code>
 @misc{zhang2024benchmarking,
-      title={Benchmarking Trustworthiness of Multimodal Large Language Models: A Comprehensive Study}, 
-      author={Yichi Zhang and Yao Huang and Yitong Sun and Chang Liu and Zhe Zhao and Zhengwei Fang and
-              Yifan Wang and Huanran Chen and Xiao Yang and Xingxing Wei and Hang Su and Yinpeng Dong and
-              Jun Zhu},
-      year={2024},
-      eprint={2406.07057},
+      title={MLA-Trust: Benchmarking Trustworthiness of Multimodal LLM Agents in GUI Environments}, 
+      author={Xiao Yang, Jiawei Chen, Jun Luo, Zhengwei Fang, Yinpeng Dong, Hang Su, Jun Zhu},
+      year={2025},
+      eprint={2506.01616},
       archivePrefix={arXiv},
-      primaryClass={cs.CL}
+      primaryClass={cs.AI}
     }     
     </code></pre>
   </div>
-</section> -->
+</section> 
 
 
 
-<!-- <footer class="footer">
+<footer class="footer">
     <div class="content has-text-centered">
     </div>
     <div class="columns is-centered">
@@ -238,7 +275,7 @@
         </div>
       </div>
     </div>
-</footer> -->
+</footer>
 
 </body>
 </html>
