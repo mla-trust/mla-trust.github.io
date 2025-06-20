@@ -1,0 +1,12 @@
+.copy-link-btn {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 0.8em;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.copy-link-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
